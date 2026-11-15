@@ -1,5 +1,10 @@
 import streamlit as st
 
+from modules.measured_mile import show_measured_mile
+# from modules.earned_value import show_earned_value
+# from modules.total_unit_cost import show_total_unit_cost
+# from modules.disruption_assistant import show_disruption_assistant
+
 # --------------------------------------------------
 # PAGE CONFIG
 # --------------------------------------------------
@@ -34,132 +39,47 @@ page = st.sidebar.radio(
 if page == "Home":
 
     st.title("PraxisLab")
-    st.subheader("Construction Methodologies in Practice")
+
+    st.subheader("Disruption Methodologies in Practice")
 
     st.markdown("---")
 
     st.markdown("""
     ## Vision
 
-    PraxisLab is a professional portfolio platform demonstrating practical
-    implementation of recognized construction disruption-analysis methodologies.
+    PraxisLab is a professional portfolio platform demonstrating
+    practical implementation of recognised construction productivity
+    and disruption assessment methodologies.
 
-    It is a practical laboratory where construction methodologies are transformed into:
+    The platform transforms methodologies into:
 
     - Transparent calculations
     - Visualisations
     - Forecasts
-    - Interpretations
+    - AI-assisted interpretations
 
-    The objective is not to automate claims preparation.
-
-    The objective is to demonstrate practical understanding of disruption-analysis methodologies
-    through implementation.
     """)
 
     st.markdown("---")
 
-    st.header("Architecture")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-
-        st.info("""
-        **Module 1: Measured Mile**
-
-        Answers:
-
-        *How much productivity was lost during the disruption period compared with the measured mile period?*
-        """)
-
-        st.info("""
-        **Module 2: Earned Value**
-
-        Answers:
-
-        *How did labour performance change during the disruption period?*
-        """)
-
-    with col2:
-
-        st.info("""
-        **Module 3: Total Unit Cost**
-
-        Answers:
-
-        *How did cost efficiency change during the disruption period?*
-        """)
-
-        st.info("""
-        **Module 4: Disruption Assistant (AI)**
-
-        Answers:
-
-        *Which methodology is most suitable given the available records and project circumstances?*
-        """)
-
-    st.markdown("---")
-
-    st.header("Technology Stack")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown("""
-        ### Core
-
-        - Python
-        - Pandas
-
-        ### Framework
-
-        - Streamlit
-        """)
-
-    with col2:
-        st.markdown("""
-        ### Visualisation
-
-        - Plotly
-        - Power BI
-
-        ### AI
-
-        - OpenAI API
-        """)
-
-    st.markdown("---")
-
-    st.header("Roadmap")
+    st.header("Current Modules")
 
     st.markdown("""
-    ✅ Foundation (2026)
-
-    ✅ PraxisLab Framework
-
-    🔄 Measured Mile
+    ✅ Measured Mile
 
     ⏳ Earned Value
 
     ⏳ Total Unit Cost
 
-    ⏳ AI Narrative Engine
-
     ⏳ Disruption Assistant
     """)
 
-    st.markdown("---")
-
-    st.success("Status: Framework Development")
-
 # --------------------------------------------------
-# PLACEHOLDER PAGES
+# MODULES
 # --------------------------------------------------
 
 elif page == "Measured Mile":
-    st.title("Measured Mile")
-    st.info("Module under development.")
+    show_measured_mile()
 
 elif page == "Earned Value":
     st.title("Earned Value")
